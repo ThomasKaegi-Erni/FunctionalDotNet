@@ -22,6 +22,13 @@ public class ImmutabilityTest
         IsImmutable(c => new OpenForMaliciousMutability<Int32>(c).Items);
     }
 
+    [Fact]
+    public void ThePospsicle_DoesNotThrow()
+    {
+        Immutability.Popsicle(new List<Int32>(), 16);
+        Assert.True(true);
+    }
+
     private static void IsImmutable(Func<List<Int32>, IEnumerable<Int32>> create)
     {
         var nonEmptyCollection = new List<Int32> { 3, 4, 1, -5, 9 };

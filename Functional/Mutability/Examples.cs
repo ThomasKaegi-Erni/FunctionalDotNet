@@ -62,7 +62,8 @@ public static class Immutability
         collection.Add(item); // Will this throw?
 
         // it depends on the property "IsReadOnly".
-        Console.WriteLine($"Will it throw? {(collection.IsReadOnly ? "Yes, it will." : "No, it won't.")}");
+        var willThrow = collection.IsReadOnly ? "Yes, it will." : "No, it won't.";
+        Console.WriteLine($"Will it throw? {willThrow}");
 
         // Yes, it will throw when an array is passed as argument:
         Popsicle(new T[] { item }, item);

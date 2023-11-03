@@ -66,6 +66,7 @@ An (anti) pattern that may emerge quite quickly is the appearance of many factor
 
 ## References
 
+- [Functional thinking](https://nealford.com/books/functionalthinking.html)
 - [Wikipedia article](https://en.wikipedia.org/wiki/Functional_programming)
 - [Functional elements of C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Functional_programming)
 - [Monads](https://ericlippert.com/2013/02/21/monads-part-one/)
