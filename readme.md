@@ -28,7 +28,7 @@ Functional programming in C\# boils down to taking the SOLID principles to the e
 
 - __S, I__: Keep interfaces extremely narrow.
   - _one_ member only, _two_ at most.
-  - _three_ only when the third member inherits from `IDisposable`.
+  - _three_ only when the third member implements `IDisposable`.
   - This enables composability.
 - __O, L__: Only allow for one inheritance level.
   - seal all classes by default.

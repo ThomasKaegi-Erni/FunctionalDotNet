@@ -5,18 +5,20 @@ namespace Functional.InterfaceDesign;
 // - storage devices
 // - intermediates (e.g. caching)
 
-public interface IRead<T>
+public interface IRead
 {
-    IAsyncEnumerable<T> Read(CancellationToken token);
+    IAsyncEnumerable<Byte> Read(CancellationToken token);
 }
 
-public interface IWrite<T>
+public interface IWrite
 {
-    Task Write(IEnumerable<T> data, CancellationToken token);
+    Task Write(IEnumerable<Byte> data, CancellationToken token);
 }
 
 // Three methods: Read, Write & Dispose
 // - Read and Write are symmetric
 // - Dispose is the only "allowed" third method.
-public interface IConnection<T> : IRead<T>, IWrite<T>, IDisposable
-{ }
+public interface IConnection : IRead, IWrite, IDisposable
+{
+
+}
