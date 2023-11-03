@@ -26,7 +26,6 @@ public abstract class PersistenceBase : IPersist
             this.logger.Log(e);
             throw;
         }
-        this.logger.Log("Done persisting.");
     }
 
     protected abstract void PersistImplementation(String text);

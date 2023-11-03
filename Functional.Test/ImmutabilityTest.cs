@@ -1,4 +1,5 @@
 using Functional.Mutability;
+
 namespace Functional.Test;
 
 public class ImmutabilityTest

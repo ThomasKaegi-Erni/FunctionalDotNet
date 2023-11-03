@@ -5,6 +5,27 @@ namespace Functional.Composition;
 
 // How many reasons to change does any one of these components have?
 
+public sealed class ToFile : IPersist
+{
+    private readonly FileInfo path;
+    public ToFile(FileInfo path) => this.path = path;
+    public void Persist(String text)
+    {
+        using var file = this.path.AppendText();
+        file.Write(text);
+    }
+}
+
+public sealed class ToDb : IPersist
+{
+    private readonly String connectionString;
+    public ToDb(String connectionString) => this.connectionString = connectionString;
+    public void Persist(String text)
+    {
+        // persist to DB.
+    }
+}
+
 public sealed class PersistenceLogger : IPersist
 {
     private readonly ILog logger;
@@ -27,7 +48,6 @@ public sealed class PersistenceLogger : IPersist
             this.logger.Log(e);
             throw;
         }
-        this.logger.Log("Done persisting.");
     }
 }
 
@@ -39,26 +59,6 @@ public sealed class NoPersistence : IPersist
     public void Persist(String text) { /* This is the empty implementation */ }
 }
 
-public sealed class ToFile : IPersist
-{
-    private readonly FileInfo path;
-    public ToFile(FileInfo path) => this.path = path;
-    public void Persist(String text)
-    {
-        using var file = this.path.AppendText();
-        file.Write(text);
-    }
-}
-
-public sealed class ToDb : IPersist
-{
-    private readonly String connectionString;
-    public ToDb(String connectionString) => this.connectionString = connectionString;
-    public void Persist(String text)
-    {
-        // persist to DB.
-    }
-}
 
 public sealed class Composition : IPersist
 {
