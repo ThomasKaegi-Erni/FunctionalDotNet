@@ -4,8 +4,12 @@
 
 - Strive for immutability
   - If there is state, it does not change.
+  - Related: the lack of side effects.
 - Composable by nature
 - Functions are first class citizens
+  - e.g: Linq is an extension on top of `IEnumerable` using aspects of functional paradigms.
+  - Some even as "higher order functions"
+    - see also Eric Lippert's awesome series on [Monads](https://ericlippert.com/2013/02/21/monads-part-one/).
 
 ## Applied to C\#
 
@@ -24,3 +28,4 @@ Functional programming in C\# boils down to taking the SOLID principles to the e
 
 - [Wikipedia article](https://en.wikipedia.org/wiki/Functional_programming)
 - [Functional elements of C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Functional_programming)
+- [Monads](https://ericlippert.com/2013/02/21/monads-part-one/)
